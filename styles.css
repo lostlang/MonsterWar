@@ -1,0 +1,167 @@
+body{
+	margin: 0%;
+	padding: 0%;
+}
+
+.battle {
+	padding: 1ex;
+	height: 50%;
+	background: #d0d8e7;
+	display: flex;
+}
+
+.monster {
+	margin: 1%;
+	margin-top: 2%;
+	height: 340px;
+	width: 266px;
+	background: rgba(0,0,0, 0.4);
+}
+
+.enemy {
+	float:right;
+	align-content: right;
+}
+
+.actions{
+	margin: 1%;
+	margin-left: 0;
+	margin-top: 2%;
+	height: 340px;
+	width: 200px;
+	background: rgba(0,0,0, 0.4);
+}
+
+.actions button{
+	margin: 8% 10%;
+	width: 80%;
+	height: 15%
+}
+
+.logs {
+	height: 80%;
+	margin-top: 1%;
+	flex-grow: 1;
+	background: rgba(0,0,0, 0.2);
+}
+
+.logs h1{
+	text-align: center;
+}
+
+.logs p{
+	margin: 1%;
+}
+
+.monstr-image {
+	margin: 5px;
+	height: 256px;
+	width: 256px;
+	background-size: 100%;
+}
+
+.team {
+	margin: 5px;
+	display: flex;
+}
+
+
+.main .monstr-image{
+	background-image: url("src/037Vulpix.webp");
+}
+
+.enemy .monstr-image{
+	background-image: url("src/037Vulpix.webp");
+}
+
+.bar {
+	margin: 1%;
+	margin-right: 10%;
+	margin-left: 10%;
+	height: 3%;
+	width: 80%;
+	border-radius: 30px;
+}
+
+.hp {
+	background: #f44336;
+}
+
+.xp {
+	background: #2196F3;
+}
+
+.ball{
+	margin: 5px;
+	width: 32.67px;
+	height: 32.67px;
+	background-image: url("src/ball.png");
+	background-size: 100%;
+}
+
+.enemy .team{
+	filter: grayscale(1);
+}
+
+.info{
+	position: absolute;
+	width: 266px;
+}
+
+.info p{
+	margin: 0em;
+	text-align: center;
+}
+
+#swap{
+	float:right;
+	width: 40px;
+	height: 40px;
+}
+
+.hotbar {
+	padding: 1ex;
+	height: 5%;
+	background: gray;
+}
+
+.textspace {
+	height: 40%;
+	background: #d0d8e7;
+}
+
+.table2{
+	height: 90%;
+	background: gray;
+	display: flex;
+}
+
+.chat {
+	background: rgba(0,0,0, 0.5);
+	flex-grow: 10;
+}
+
+.person {
+	flex-grow: 1;
+}
+
+.context {
+	padding: 1ex;
+	display: flex;
+}
+
+#adresant {
+	background: rgba(1,1,1, 0.5);
+	flex-grow: 1;
+}
+
+#messange{
+	margin-left: 1ex;
+	background: rgba(1,1,1, 0.5);
+	flex-grow: 9;
+}
+
+.utilits-buttons {
+	margin-left: 1ex;
+	flex-grow: 2;
+}
