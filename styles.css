@@ -39,7 +39,7 @@ body{
 }
 
 .logs {
-	height: 80%;
+	height: 85%;
 	margin-top: 1%;
 	flex-grow: 1;
 	background: rgba(0,0,0, 0.2);
@@ -65,7 +65,6 @@ body{
 	display: flex;
 }
 
-
 .main .monstr-image{
 	background-image: url("src/037Vulpix.webp");
 }
@@ -89,6 +88,10 @@ body{
 
 .xp {
 	background: #2196F3;
+}
+
+.enemy .xp{
+	visibility: hidden;
 }
 
 .ball{

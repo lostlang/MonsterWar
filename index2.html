@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MonsterVers</title>
+	<link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+	<div class="top">
+		<div class="content tool">
+			<div class="toolLeft">
+				<button>Главная</button>
+			</div>
+			<div class="toolCenter">
+				<button>Профиль</button>
+				<button>Команда</button>
+				<button>Инвентарь</button>
+				<button>Почта</button>
+				<button>Игроки</button>
+				<button>Кланы</button>
+				<button>Дневник</button>
+			</div>
+			<div class="toolRight">
+				<button>Подсказка</button>
+				<button>Выход</button>
+			</div>
+		</div>
+	</div>
+	<div class="middle">
+		<div class="content battle">
+			<div class="monster user">
+				<div class="ball" id="swap"></div>
+				<div class="info">
+					<p><span id="name">Вульпикс</span>
+					   <span id="lvl">1</span>
+					   <span id="world">- lvl</span></p>
+				</div>
+				<div class="monster-image"></div>
+				<div class="bar">
+					<div class="hp"></div>
+				</div>
+				<div class="br"></div>
+				<div class="bar">
+					<div class="xp"></div>
+				</div>
+				<div class="team">
+					<div class="ball" id=1></div>
+					<div class="ball die" id=2></div>
+					<div class="ball inactive" id=3></div>
+					<div class="ball inactive" id=4></div>
+					<div class="ball inactive" id=5></div>
+					<div class="ball inactive" id=6></div>
+				</div>
+			</div>
+			<div class="monsterAction">
+				<button id="1">Атака 1</button>
+				<button id="2">Атака 2</button>
+				<button id="3">Атака 3</button>
+				<button id="4">Сбежать</button>
+			</div>
+			<div class="battleLog">
+				<h1>Лог боя</h1>
+				<p>Да пока я не работаю, но когда-то буду</p>
+			</div>
+			<div class="monster enemy">
+				<div class="info">
+					<p><span id="name">Вульпикс</span>
+					   <span id="lvl">N</span>
+					   <span id="world">- lvl</span></p>
+				</div>
+				<div class="monster-image"></div>
+				<div class="bar">
+					<div class="hp"></div>
+				</div>
+				<div class="br"></div>
+				<div class="bar"  style="visibility: hidden;">
+					<div class="xp"></div>
+				</div>
+				<div class="team">
+					<div class="ball" id=1></div>
+					<div class="ball inactive" id=2></div>
+					<div class="ball inactive" id=3></div>
+					<div class="ball inactive" id=4></div>
+					<div class="ball inactive" id=5></div>
+					<div class="ball inactive" id=6></div>
+				</div>
+			</div>
+		</div>
+		<div class="content location">
+		</div>
+	</div>
+	<div class="bottom">
+		<div class="content divChat">
+			<div class="chat">
+				<div class="pageChat">
+					<button>Общий <span id="newMessange">N</span></button>
+					<button>Хуебщий <span id="newMessange">N</span></button>
+				</div>
+				<div class="textChat">
+					<p>Тут какой-то текст от людей переписывающихся в чате</p>
+				</div>
+				<div class="sendChat">
+					<div id="addresant">Получатель</div>
+					<div id="massange">Сообщение</div>
+					<button>Стикеры</button>
+					<button>Отправить</button>
+				</div>
+			</div>
+			<div class="utility">
+				<div class="miniMe"></div>
+				<div class="people">
+					<p>Ты</p>
+					<p>Админ следящий за тобой</p>
+				</div>
+				<div class="utilityButton">
+					<button>Дикие</button>
+					<button>Бои</button>
+					<button>Dex</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
