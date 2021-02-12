@@ -28,8 +28,8 @@ body, html{
 	display: flex;
 }
 
-.tool {
-	padding: 1%;
+.tool div{
+	padding: 10px;
 }
 
 .toolCenter {
@@ -58,11 +58,15 @@ body, html{
 	background: rgba(0,0,0, 0.4);
 }
 
-.battleLog {
+.divLog {
 	margin-top: 45px;
 	height: 350px;
 	flex-grow: 1;
 	background: rgba(0,0,0, 0.2);
+}
+
+.battleLog {
+	height: 100%;
 }
 
 .battleLog h1{
@@ -71,6 +75,19 @@ body, html{
 
 .battleLog p{
 	margin: 1%;
+}
+
+.closeBattle {
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+	display: flex;
+}
+
+.closeBattle button {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .location {
@@ -123,8 +140,8 @@ body, html{
 	transform: scaleX(-1);
 }
 
-.monster .br{
-	padding: 1%;
+.br {
+	padding: 5px;
 }
 
 .bar {
@@ -137,22 +154,20 @@ body, html{
 	border-radius: 30px;
 }
 
-.xp {
+.bar *{
 	margin-right: 2%;
 	margin-left: 2%;
 	height: 10px;
 	width: 96%;
-	background: #2196F3;
 	border-radius: 30px;
 }
 
+.xp {
+	background: #2196F3;
+}
+
 .hp {
-	margin-right: 2%;
-	margin-left: 2%;
-	height: 10px;
-	width: 96%;
 	background: #f44336;
-	border-radius: 30px;
 }
 
 .team {
@@ -198,10 +213,6 @@ body, html{
 	display: flex;
 }
 
-.sendChat * {
-	margin: 10px;
-}
-
 .sendChat div {
 	background: gray;
 }
@@ -230,6 +241,57 @@ body, html{
 	display: flex;
 }
 
-.utilityButton *{
+.divBottom {
+	padding-top: 10px;
+}
+
+.divBottom * {
 	margin: 10px;
+}
+
+
+.divDockpanel {
+	margin: 1%;
+	position: absolute;
+	z-index: 2;
+	background: #737373;
+}
+
+.divDockpanel .table {
+	height: 512px;
+	width: 768px;
+}
+
+.divDockpanel .table2{
+	display: none;
+}
+
+.divAll {
+	height: 30px;
+
+}
+
+.naming {
+	flex-grow: 1;
+}
+
+.row {
+	display: flex;
+}
+
+.item {
+	height: 85px;
+	width: 85px;
+	background: #1e3955;
+}
+
+.img {
+	margin: 5px;
+	height: 75px;
+	width: 75px;
+}
+
+#i1{
+	background: url("src/pokeball.png");
+	background-size: 100%;
 }

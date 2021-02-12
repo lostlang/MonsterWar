@@ -1,38 +1,32 @@
 
 $(function(){
-	$("#swap").click(function(){
-		swap()
-	});
-	$(".actions button").click(function(){
-		actions(this.id)
-	});
-	load();
+	/*
+		Close Battle
+	*/
+	$(".closeBattle button").click(function(){
+		$(".battle").css("display", "none");
+		$(".location").css("display", "flex");
+	})
+	/*
+		Start Battle
+	*/
+	$(".utilityButton #enemyMonster").click(function(){
+		$(".battle").css("display", "flex");
+		$(".location").css("display", "none");
+		console.log(1);
+	})
+	/*
+		Open dock
+	*/
+	$(".toolCenter *").click(function(button){
+		$(".divDockpanel .table2").css("display", "none");
+		$(".divAll").css("display", "flex");
+		$("." + button.target.id).css("display", "flex");
+	})
+	/*
+		Close Dock
+	*/
+	$("#closeDock").click(function(button){
+		$(".divDockpanel .table2").css("display", "none");
+	})
 });
-
-
-function swap(){
-	console.log("swap")
-};
-
-function actions(id){
-	console.log(id)
-};
-
-function xp(value){
-	console.log($(".xp").css("width"));	
-}
-
-function load(){
-	monster = {
-		"name": "Vulpi",
-		"lvl": 1,
-		"xp": 0,
-		"attack 1": "Bite",
-		"attack 1": "Fire storm",
-		"attack 1": "Ignight",
-		"gen a": 20,
-		"gen d": 20,
-		"gen s": 20,
-		"gen h": 20,
-	}
-}
