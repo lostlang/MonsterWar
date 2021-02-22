@@ -34,14 +34,18 @@
     #send_messange & {
         @include load_image("../image/icon/send.png");
     };
-    #minimaze_people & {
-        @include load_image("../image/icon/minimaze.png");
+    #minimize_people & {
+        @include load_image("../image/icon/minimize.png");
+    };
+    #maximize & {
+        @include load_image("../image/icon/maximize.png");
     };
     #local_players_search &{
         @include load_image("../image/icon/search_main.png");
     };
     #open & {
         @include load_image("../image/icon/open.png");
+        transform: scaleY(-1);
     }
 };
 

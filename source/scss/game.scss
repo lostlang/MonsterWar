@@ -1,5 +1,5 @@
 @import "nullstyle.scss";
-@import "dev.scss";
+//@include "dev.scss";
 @import "shapes.scss";
 @import "load_image.scss";
 
@@ -11,6 +11,7 @@ $colorContrast2: #fa8b46;
 $colorContrast3: #34e382;
 $colorContrast4: #d7fa46;
 $colorContrast5: #fa422d;
+$colorGray: #a0a9b7;
 $widthMenu: 70px;
 $widthNotCentralMenuBlock: 20%;
 $sizeMenuButton: 50px;
@@ -106,7 +107,33 @@ body {
         flex-grow: 1;
     };
     .people {
-        @include hw(100%, $widthPeople)
+        &__minimize{
+            @include hw(100%, 20px);
+        };
+        .container {
+            @include hw(100%, $widthPeople - 20px);
+            min-width: $widthPeople - 20px;
+        }
+    };
+}
+
+.info {
+    margin: 1px;
+    @include hw(13px, 13px);
+    text-align: center;
+    border-radius: 3px;
+    background: $colorContrast;
+    color: $colorMain;
+    cursor: pointer;
+}
+
+.user {
+    * {
+        display: inline-block;
+        vertical-align: bottom;
+    };
+    span {
+        cursor: pointer;
     };
 }
 
@@ -145,9 +172,30 @@ body {
         .circle{
             background: $colorContrast2;
         };
-    }
+    };
     &__log {
-        @include hw(100%, 100%)
+        padding: 5px;
+        @include hw(100%, 100%);
+        .messange {
+            font-size: 11px;
+            display: inline-block;
+            div {
+                display: inline-block;
+                vertical-align: bottom;
+            };
+            .time {
+                cursor: pointer;
+                font-size: 10px;
+                padding: 0 5px;
+                margin-top: auto;
+                color: $colorContrast;
+                text-shadow: 1px 1px 0 $colorGray;
+            };
+            .my {
+                background: $colorContrast;
+                color: $colorMain;
+            };
+        }
     };
     &__send {
         padding: 0 10px;
@@ -181,7 +229,6 @@ body {
 }
 
 .people {
-    @include hw(100%, 100%);
     display: flex;
     .container {
         display: flex;
@@ -189,13 +236,20 @@ body {
         @include hw(100%, 100%);
         .tab_naming {
             display: flex;
-        }
+            padding-bottom: 6px;
+            p {
+                padding-left: 5px;
+            };
+        };
         #naming_player {
             padding-left: $sizeMinibutton;
-        }
+        };
         .players {
             flex-grow: 1;
         };
+        .battles {
+            flex-grow: 1;
+        }
     }
 }
 
@@ -211,5 +265,42 @@ body {
     };
     &__list{
         flex-grow: 1;
+        .user {
+            font-size: 12px;
+            padding: 2px 25px;
+        };
     };
+}
+
+.battles {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    .button{
+        @include button_construct(15px, 15px);
+    }
+    .battle {
+        display: flex;
+        padding: 5px 0px;
+        margin-left: auto;
+        margin-right: auto;
+        div {
+            margin: 0 5px;
+            * {
+                margin: 0;
+            }
+        }
+    }
+}
+
+
+// display block
+.texting {
+    .container {
+    }
+    .players {
+    }
+    .battles {
+        display: none;
+    }
 }
