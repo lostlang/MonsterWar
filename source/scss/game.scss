@@ -1,0 +1,215 @@
+@import "nullstyle.scss";
+@import "dev.scss";
+@import "shapes.scss";
+@import "load_image.scss";
+
+
+// variables
+$colorMain: #c7cedf;
+$colorContrast: #3b4b60;
+$colorContrast2: #fa8b46;
+$colorContrast3: #34e382;
+$colorContrast4: #d7fa46;
+$colorContrast5: #fa422d;
+$widthMenu: 70px;
+$widthNotCentralMenuBlock: 20%;
+$sizeMenuButton: 50px;
+$sizeMinibutton: 20px;
+$borderRadiusCentralMenu: 20px;
+$paddingButton: ($widthMenu - $sizeMenuButton) / 2;
+$widthPeople: 300px;
+
+
+// mixins
+@mixin hw($height, $width) {
+    height: $height;
+    width: $width;
+}
+
+@mixin button_construct($height, $width) {
+    @include hw($height, $width);
+    div {
+        @include hw($height, $width);
+        position: absolute;
+    };
+}
+
+body {
+    background: $colorMain;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.menu {
+    @include hw(100%, $widthMenu);
+    .container {
+        @include hw(100%, 100%);
+        padding: $paddingButton;
+    };
+    .button {
+        @include button_construct($sizeMenuButton, $sizeMenuButton);
+    }
+    &__top {
+        @include hw($widthNotCentralMenuBlock, 100%);
+        .container {
+            padding-top: $paddingButton;
+        };
+        .button {
+            .circle {
+                background: $colorContrast
+            }
+            &__image {
+                border-bottom-right-radius: 100%;
+	            border-bottom-left-radius: 100%;
+            };
+        };
+    };
+    &__central {
+        @include hw(100% - 2 * $widthNotCentralMenuBlock, 100%);
+        box-sizing: border-box;
+        border: 3px solid $colorContrast;
+        border-bottom-right-radius: $borderRadiusCentralMenu;
+        border-top-right-radius: $borderRadiusCentralMenu;
+        border-left: 0;
+        display: flex;
+        .container{
+            padding: 0;
+            margin: auto;
+            @include hw((7 * $sizeMenuButton + 6 * $paddingButton), $sizeMenuButton);
+            .button {
+                margin-bottom: $paddingButton;
+            }
+        };
+    };
+    &__bottom {
+        @include hw($widthNotCentralMenuBlock, 100%);
+    };
+}
+
+.activity {
+    @include hw(100%, 100%)
+}
+
+.game {
+    @include hw(50%, 100%)
+}
+
+.texting {
+    @include hw(50%, 100%);
+    display: flex;
+    .button {
+        @include button_construct($sizeMinibutton, $sizeMinibutton);
+    };
+    .chat {
+        flex-grow: 1;
+    };
+    .people {
+        @include hw(100%, $widthPeople)
+    };
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    &__tabs {
+        display: flex;
+    };
+    &__tab {
+        margin-left: 5px;
+        padding: 0 10px;
+        display: flex;
+        box-sizing: border-box;
+        border: 3px solid $colorContrast;
+        border-radius: 10px;
+        font-size: 12px;
+        cursor: pointer;
+        .circle{
+            position: relative;
+            left: -12px;
+            top: 1px;
+            @include hw(5px, 5px);
+            background: $colorContrast5;
+        };
+        .button {
+            position: relative;
+            top: 2px;
+            left: 4px;
+            @include button_construct(12px, 12px);
+        };
+    };
+    .active {
+        background: $colorContrast;
+        color: $colorMain;
+        .circle{
+            background: $colorContrast2;
+        };
+    }
+    &__log {
+        @include hw(100%, 100%)
+    };
+    &__send {
+        padding: 0 10px;
+        padding-bottom: 5px;
+        display: flex;
+        input {
+            padding: 0 5px;
+            margin: 0 5px;
+            font-size: 12px;
+        };
+        .button {
+            margin: 0 5px;
+        }
+        .container {
+            flex-grow: 1;
+            display: flex;
+            border: 1px solid $colorContrast;
+            border-radius: 15px;
+            .button {
+                margin-right: 0;
+            };
+        }
+        #adresant {
+            box-sizing: border-box;
+            border-bottom: 1px solid $colorContrast;
+        };
+        #text_messange {
+            flex-grow: 1;
+        };
+    };
+}
+
+.people {
+    @include hw(100%, 100%);
+    display: flex;
+    .container {
+        display: flex;
+        flex-direction: column;
+        @include hw(100%, 100%);
+        .tab_naming {
+            display: flex;
+        }
+        #naming_player {
+            padding-left: $sizeMinibutton;
+        }
+        .players {
+            flex-grow: 1;
+        };
+    }
+}
+
+.players {
+    display: flex;
+    flex-direction: column;
+    &__search{
+        margin: auto;
+        padding: 0 4px;
+        display: flex;
+        background: $colorContrast;
+        border-radius: 20px;
+    };
+    &__list{
+        flex-grow: 1;
+    };
+}
