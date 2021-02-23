@@ -1,5 +1,5 @@
 @import "nullstyle.scss";
-//@include "dev.scss";
+//@import "dev.scss";
 @import "shapes.scss";
 @import "load_image.scss";
 
@@ -37,6 +37,18 @@ $widthPeople: 300px;
 
 body {
     background: $colorMain;
+    .menu {
+        @include hw(100%, $widthMenu);
+    };
+    .activity {
+        @include hw(100%, 100%);
+        .game {
+            @include hw(50%, 100%);
+        };
+        .texting {
+            @include hw(50%, 100%);
+        };
+    };
 }
 
 .button {
@@ -44,7 +56,6 @@ body {
 }
 
 .menu {
-    @include hw(100%, $widthMenu);
     .container {
         @include hw(100%, 100%);
         padding: $paddingButton;
@@ -89,16 +100,82 @@ body {
     };
 }
 
-.activity {
-    @include hw(100%, 100%)
+.game {
+    .loacation {
+        height: 100%;
+    };
+    .battle {
+        height: 100%;
+    }
+    .dangeon {
+        height: 100%;
+    }
 }
 
-.game {
-    @include hw(50%, 100%)
-}
+.loacation {
+    display: flex;
+    padding: 20px;
+    .move_list {
+        padding: 10px;
+        width: 20%;
+        max-width: 300px;
+        .move {
+            text-align: center;
+            margin: 10px;
+            padding: 5px 0;
+            cursor: pointer;
+            box-sizing: border-box;
+            border: 2px ridge $colorContrast;
+            border-radius: 10px;
+        }
+    };
+    .container {
+        width: 60%;
+        flex-grow: 1;
+        padding: 0 20px;
+    };
+    &__info {
+        height: 80%;
+    };
+    &__name {
+        text-align: center;
+        position: relative;
+        top: 10px;
+        span {
+            padding: 5px 25px;
+            background: $colorContrast;
+            border-radius: 10px;
+            border: 5px double $colorMain;
+            border-radius: 10px;
+            color: $colorMain;
+        }
+    }
+    &__discription {
+        height: 80%;
+        padding: 15px;
+        border: 5px double $colorContrast;
+        border-radius: 10px;
+    };
+    &__discription_advance{
+        height: 80%;
+    };
+    .npc_list {
+        padding: 10px;
+        width: 20%;
+        max-width: 300px;
+        .nps {
+            text-align: center;
+            margin: 10px;
+            padding: 5px 0;
+            cursor: pointer;
+            box-sizing: border-box;
+            border: 2px ridge $colorContrast;
+            border-radius: 10px;
+        };
+    }
+};
 
 .texting {
-    @include hw(50%, 100%);
     display: flex;
     .button {
         @include button_construct($sizeMinibutton, $sizeMinibutton);
@@ -152,18 +229,17 @@ body {
         border-radius: 10px;
         font-size: 12px;
         cursor: pointer;
-        .circle{
-            position: relative;
-            left: -12px;
-            top: 1px;
-            @include hw(5px, 5px);
-            background: $colorContrast5;
-        };
         .button {
             position: relative;
             top: 2px;
             left: 4px;
             @include button_construct(12px, 12px);
+            .circle {
+                @include hw(5px, 5px);
+                left: -4px;
+                top: -1px;
+                background: $colorContrast5;
+            };
         };
     };
     .active {
@@ -301,6 +377,20 @@ body {
     .players {
     }
     .battles {
+        display: none;
+    }
+}
+
+.game {
+    .loacation {
+        &__discription_advance {
+            display: none;
+        }
+    }
+    .battle {
+        display: none;
+    }
+    .dangeon {
         display: none;
     }
 }
