@@ -46,6 +46,21 @@
     #open & {
         @include load_image("../image/icon/open.png");
         transform: scaleY(-1);
+    };
+    #rope & {
+        @include load_image("../image/icon/rope.png");
+    };
+    #fishing_rod & {
+        @include load_image("../image/icon/fishing_rod.png");
+    };
+    #archeology & {
+        @include load_image("../image/icon/archeology.png");
+    };
+    #wild & {
+        @include load_image("../image/icon/wild.png");
+    };
+    #basket & {
+        @include load_image("../image/icon/basket.png");
     }
 };
 

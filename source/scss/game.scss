@@ -31,7 +31,6 @@ $widthPeople: 300px;
     @include hw($height, $width);
     div {
         @include hw($height, $width);
-        position: absolute;
     };
 }
 
@@ -53,6 +52,9 @@ body {
 
 .button {
     cursor: pointer;
+    * {
+        position: absolute;
+    }
 }
 
 .menu {
@@ -130,34 +132,66 @@ body {
         }
     };
     .container {
-        width: 60%;
         flex-grow: 1;
         padding: 0 20px;
-    };
-    &__info {
-        height: 80%;
-    };
-    &__name {
-        text-align: center;
-        position: relative;
-        top: 10px;
-        span {
-            padding: 5px 25px;
-            background: $colorContrast;
-            border-radius: 10px;
-            border: 5px double $colorMain;
-            border-radius: 10px;
-            color: $colorMain;
+        .loacation_info {
+            display: flex;
+            flex-direction: column;
+            height: 80%;
+            .name {
+                height: 20px;
+                display: flex;
+                span {
+                    margin: auto;
+                    padding: 5px 20px;
+                    color: $colorGray;
+                    background: $colorContrast;
+                    text-align: center;
+                    position: relative;
+                    border-radius: 15px;
+                    border: 3px double $colorMain;
+                };
+                .info {
+                    @include hw(16px, 16px);
+                    position: relative;
+                    top: 30px;
+                    left: -10px;
+                }
+            };
+            .discription, .discription_advance{
+                padding: 14px 5px;
+                flex-grow: 1;
+                border-radius: 15px;
+                border: 3px double $colorContrast;
+            };
+        };
+        .location_equip_list, .location_action_list {
+            display: flex;
+            padding: 10px;
+            .button {
+                margin: 0 5px;
+            }
+            div {
+                @include hw(40px, 40px);
+            };
         }
-    }
-    &__discription {
-        height: 80%;
-        padding: 15px;
-        border: 5px double $colorContrast;
-        border-radius: 10px;
-    };
-    &__discription_advance{
-        height: 80%;
+        .location_equip_list {
+            float: left;
+            .back {
+                margin: 3px;
+                @include hw(34px, 34px);
+                border-radius: 5px;
+                background: $colorContrast;
+                opacity: 0.7;
+            };
+        };
+        .location_action_list {
+            float: right;
+            padding-top: 5px;
+            div {
+                @include hw(45px, 45px);
+            };
+        }
     };
     .npc_list {
         padding: 10px;
@@ -383,7 +417,7 @@ body {
 
 .game {
     .loacation {
-        &__discription_advance {
+        .discription_advance {
             display: none;
         }
     }
